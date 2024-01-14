@@ -40,7 +40,7 @@
 	$: output = calculateOutput(coffeeMilkRatio, waterCoffeeRatio, $containers);
 </script>
 
-<div class="container h-full mx-auto flex justify-center items-center py-4">
+<div class="container h-full mx-auto flex justify-center items-center py-24 md:py-0">
 	<div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-10 items-center justify-center">
 		<div class="card p-4 md:w-96">
 			<header class="card-header text-center">Input</header>
