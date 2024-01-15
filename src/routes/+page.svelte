@@ -46,7 +46,7 @@
 			<header class="card-header text-center">Input</header>
 			<section class="p-4">
 				<div class="flex flex-col space-y-4">
-					<div class="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-between">
+					<div class="flex flex-col md:flex-row space-y-4 md:space-y-0 justify-around">
 						<div class="flex flex-col items-center justify-center space-y-2">
 							<p>Coffee <span class="text-primary-500">:</span> Milk</p>
 							<div>
@@ -99,17 +99,22 @@
 				{#await output then results}
 					<div class="flex flex-col space-y-4">
 						<div class="flex flex-col justify-center items-center">
-							<p class="text-center">Coffee to make:</p>
+							<p class="text-center">Coffee to make</p>
+							<hr class="border-b-white w-full" />
 							<p>Water: <span class="text-primary-500">{Number(results.water).toFixed(1)}g</span></p>
 							<p>Coffee grinds: <span class="text-primary-500">{Number(results.coffee).toFixed(1)}g</span></p>
 						</div>
 
 						<div class="flex flex-col space-y-2 items-center justify-center">
-							Per container:
+							<div class="w-full text-center">
+								<p>Per container</p>
+								<hr class="border-b-white w-full" />
+							</div>
+
 							{#each results.containers || [] as container, i}
 								<div class="card p-2">
 									<div>
-										Big Glass - <span class="text-primary-500">{container.water.toFixed(1)}g</span> coffee & <span class="text-primary-500">{container.milk.toFixed(1)}g</span> milk
+										{container.name} - <span class="text-primary-500">{container.water.toFixed(1)}g</span> coffee & <span class="text-primary-500">{container.milk.toFixed(1)}g</span> milk
 									</div>
 								</div>
 							{/each}
